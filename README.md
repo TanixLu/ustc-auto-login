@@ -13,9 +13,9 @@ Chrome和Edge使用方法如下：
 
 1. 点击右侧Releases中的Latest，下载Assets中的ustc-auto-login.zip，将其解压到文件夹ustc-auto-login中，注意ustc-auto-login文件夹以后不能删除或移动，建议剪切到合适位置
 
-2. Chrome浏览器进入<chrome://extensions/>，从右上角打开开发者模式，点击左上角“加载已解压的扩展程序”，选择ustc-auto-login文件夹安装扩展
+2. Chrome进入chrome://extensions/，从右上角打开开发者模式，点击左上角“加载已解压的扩展程序”，选择ustc-auto-login文件夹安装扩展
 
-   Edge进入<edge://extensions/>，从左侧打开开发人员模式，点击上方的“加载解压缩的扩展”，选择ustc-auto-login文件夹安装扩展
+   Edge进入edge://extensions/，从左侧打开开发人员模式，点击上方的“加载解压缩的扩展”，选择ustc-auto-login文件夹安装扩展
 
 3. 点击浏览器右上角扩展按钮，下拉栏中点击“USTC自动登录”插件，在弹出窗口中输入学号、邮箱和密码，会自动保存
 
