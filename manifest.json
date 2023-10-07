@@ -9,20 +9,35 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://passport.ustc.edu.cn/login*", "https://mail.ustc.edu.cn/"],
+      "matches": [
+        "https://passport.ustc.edu.cn/login*",
+        "https://mail.ustc.edu.cn/"
+      ],
       "run_at": "document_start",
-      "js": ["html-hidden.js"]
+      "js": [
+        "html_hidden.js"
+      ]
     },
     {
-      "matches": ["https://passport.ustc.edu.cn/login*"],
+      "matches": [
+        "https://passport.ustc.edu.cn/login*"
+      ],
       "run_at": "document_end",
-      "js": ["passport-auto-login.js"]
+      "js": [
+        "passport_auto_login.js"
+      ]
     },
     {
-      "matches": ["https://mail.ustc.edu.cn/"],
+      "matches": [
+        "https://mail.ustc.edu.cn/"
+      ],
       "run_at": "document_end",
-      "js": ["mail-auto-login.js"]
+      "js": [
+        "mail_auto_login.js"
+      ]
     }
   ],
-  "permissions": ["storage"]
+  "permissions": [
+    "storage"
+  ]
 }
