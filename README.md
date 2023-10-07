@@ -28,7 +28,3 @@ USTC邮件系统使用指定链接：https://mail.ustc.edu.cn/
 其他需要统一身份认证的地方右键复制其链接，如教务系统为：https://jw.ustc.edu.cn/ucas-sso/login
 
 ![](assets/copy_link.png)
-
-## TODO
-
-- 一卡通密码和邮箱密码可能不一致
