@@ -4,7 +4,7 @@ chrome.storage.sync.get(["mail_last_time"], ({mail_last_time}) => {
 
     const mail_input = document.getElementById("uid");
     const password_input = document.getElementById("password");
-    const login_button = document.getElementById("login_button");
+    const login_button = document.querySelector('button.u-btn.submit');
     chrome.storage.sync.get(["mail", "mail_password", "password"], ({mail, mail_password, password}) => {
         mail_input.value = mail;
         if (mail_password) {
