@@ -23,7 +23,7 @@
 
 ## 如何添加自动登录书签
 
-USTC邮件系统使用指定链接：https://mail.ustc.edu.cn/coremail/index.jsp?cus=1
+USTC邮件系统使用链接：https://mail.ustc.edu.cn/ 或 https://mail.ustc.edu.cn/coremail/index.jsp
 
 其他需要统一身份认证的地方右键复制其链接，如教务系统为：https://jw.ustc.edu.cn/ucas-sso/login
 

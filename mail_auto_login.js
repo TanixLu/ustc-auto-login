@@ -1,6 +1,9 @@
 chrome.storage.sync.get(["mail_last_time"], ({mail_last_time}) => {
     // 如果距上次自动登录不足3s，可能是密码错误，需要暂停
-    if (Date.now() - mail_last_time < 3000) return;
+    if (Date.now() - mail_last_time < 3000) {
+        document.documentElement.style.visibility = "visible";
+        return;
+    }
 
     const mail_input = document.getElementById("uid");
     const password_input = document.getElementById("password");
