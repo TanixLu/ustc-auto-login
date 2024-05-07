@@ -29,9 +29,9 @@
     },
     {
       "matches": [
-        "https://mail.ustc.edu.cn/"
+        "https://mail.ustc.edu.cn/coremail/index.jsp?cus=1"
       ],
-      "run_at": "document_end",
+      "run_at": "document_idle",
       "js": [
         "mail_auto_login.js"
       ]
