@@ -13,13 +13,18 @@ const validate_img = document.querySelector(".validate-img");
 
 
 function wait_to_submit() {
-    if (login_form.resultInput.value && validate_img.complete) {
+    if (login_form.resultInput.value && (!validate_img || validate_img.complete)) {
         console.log(`passport_auto_login.js: resultInput = ${login_form.resultInput.value}`);
-        OCRAD(validate_img, {numeric: true}, function (code) {
-            login_form.LT.value = code;
-            console.log(`passport_auto_login.js: LT = ${code}`);
+        if (validate_img) {
+            OCRAD(validate_img, {numeric: true}, function (code) {
+                login_form.LT.value = code;
+                console.log(`passport_auto_login.js: LT = ${code}`);
+                login_form.submit();
+            });
+        } else {
+            console.log("passport_auto_login.js: no validate_img");
             login_form.submit();
-        });
+        }
     } else {
         setTimeout(wait_to_submit, 100);
     }
