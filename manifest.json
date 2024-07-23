@@ -1,21 +1,21 @@
 {
   "name": "USTC自动登录",
   "description": "包括统一身份认证系统、邮箱系统。",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "manifest_version": 3,
   "author": "Tanix",
   "action": {
     "default_popup": "popup.html"
   },
-  "background": {
-    "service_worker": "service_worker.js"
-  },
   "content_scripts": [
     {
       "matches": [
-        "https://passport.ustc.edu.cn/login?*",
+        "https://passport.ustc.edu.cn/login*",
         "https://mail.ustc.edu.cn/",
         "https://mail.ustc.edu.cn/coremail/index.jsp*"
+      ],
+      "exclude_matches": [
+        "https://passport.ustc.edu.cn/loginSm.jsp*"
       ],
       "run_at": "document_start",
       "js": [
@@ -24,12 +24,24 @@
     },
     {
       "matches": [
-        "https://passport.ustc.edu.cn/login?*"
+        "https://passport.ustc.edu.cn/login*"
+      ],
+      "exclude_matches": [
+        "https://passport.ustc.edu.cn/loginSm.jsp*"
       ],
       "run_at": "document_end",
       "js": [
         "ocrad.js",
         "passport_auto_login.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://passport.ustc.edu.cn/loginSm.jsp*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "login_sm_helper.js"
       ]
     },
     {
