@@ -7,10 +7,13 @@
   "action": {
     "default_popup": "popup.html"
   },
+  "background": {
+    "service_worker": "service_worker.js"
+  },
   "content_scripts": [
     {
       "matches": [
-        "https://passport.ustc.edu.cn/login*",
+        "https://passport.ustc.edu.cn/login?*",
         "https://mail.ustc.edu.cn/",
         "https://mail.ustc.edu.cn/coremail/index.jsp*"
       ],
@@ -21,10 +24,11 @@
     },
     {
       "matches": [
-        "https://passport.ustc.edu.cn/login*"
+        "https://passport.ustc.edu.cn/login?*"
       ],
       "run_at": "document_end",
       "js": [
+        "ocrad.js",
         "passport_auto_login.js"
       ]
     },
