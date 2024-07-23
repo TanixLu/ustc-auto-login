@@ -2,6 +2,7 @@ chrome.storage.sync.get(["mail_last_time"], ({mail_last_time}) => {
     // 如果距上次自动登录不足3s，可能是密码错误，需要暂停
     if (Date.now() - mail_last_time < 3000) {
         document.documentElement.style.visibility = "visible";
+        console.log("mail_auto_login.js: too frequent, stop auto login");
         return;
     }
 
@@ -14,12 +15,19 @@ chrome.storage.sync.get(["mail_last_time"], ({mail_last_time}) => {
         // 输入邮箱用户名
         mail_input.value = mail_name;
         // 选择对应邮箱后缀
-        console.log(mail_suffix);
         document.querySelector(`li[data-domain="${mail_suffix}"] > a`).click();
+        console.log(`mail_auto_login.js: mail_suffix = ${mail_suffix}`);
         // 输入密码
-        password_input.value = mail_password ? mail_password : password;
+        if (mail_password) {
+            password_input.value = mail_password;
+            console.log(`mail_auto_login.js: use mail_password`);
+        } else {
+            password_input.value = password;
+            console.log(`mail_auto_login.js: use password`);
+        }
         // 记住密码
         if (remember_user_checkbox) remember_user_checkbox.click();
+        console.log(`mail_auto_login.js: saveUsername = ${remember_user_checkbox.checked}`);
         const now = Date.now();
         chrome.storage.sync.set({mail_last_time: now}).then(_ => console.log(`mail_last_time: ${now}`));
         login_button.click();

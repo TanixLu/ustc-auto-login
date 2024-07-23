@@ -7,6 +7,9 @@
   "action": {
     "default_popup": "popup.html"
   },
+  "background": {
+    "service_worker": "service_worker.js"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -41,6 +44,8 @@
       ],
       "run_at": "document_end",
       "js": [
+        "crypto-js_v3.1.9.js",
+        "fingerprint2_v2.min.js",
         "login_sm_helper.js"
       ]
     },
