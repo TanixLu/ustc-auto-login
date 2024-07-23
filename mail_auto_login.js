@@ -1,3 +1,17 @@
+function check() {
+    const checkbox_input = document.querySelector('input.j-authorize-device[type="checkbox"]');
+    if (checkbox_input && !checkbox_input.checked) {
+        checkbox_input.checked = true;
+        const checkbox_i = document.querySelector('i[class="checkbox"]');
+        checkbox_i.classList.add("checkbox-checked");
+        console.log("mail_auto_login.js: checkbox checked");
+    } else {
+        setTimeout(check, 100);
+    }
+}
+
+check();
+
 chrome.storage.sync.get(["mail_last_time"], ({mail_last_time}) => {
     // 如果距上次自动登录不足3s，可能是密码错误，需要暂停
     if (Date.now() - mail_last_time < 3000) {
