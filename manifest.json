@@ -1,7 +1,7 @@
 {
   "name": "USTC自动登录",
   "description": "包括统一身份认证系统、邮箱系统。",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "manifest_version": 3,
   "author": "Tanix",
   "action": {
