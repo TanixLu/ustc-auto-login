@@ -6,4 +6,4 @@ console.log("html_hidden.js: loaded");
 setTimeout(() => {
     document.documentElement.style.visibility = "visible";
     console.log("html_hidden.js: show html after 7s");
-}, 70000);
+}, 7000);
